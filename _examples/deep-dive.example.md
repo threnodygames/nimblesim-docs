@@ -1,7 +1,5 @@
 ---
 title: example
-nav_order: 3
-layout: home
 ---
 
 
