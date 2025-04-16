@@ -1,8 +1,7 @@
 ---
-title: why nimblesim?
+title: what it solves
 layout: home
-nav_order: 0
-parent: home
+nav_order: 1
 ---
 
 ## 🎯 Why NimbleSim?
