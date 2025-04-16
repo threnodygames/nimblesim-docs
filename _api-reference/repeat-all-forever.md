@@ -1,3 +1,8 @@
+---
+title: repeat-all-forever
+layout: home
+---
+
 ## `RepeatAllForever()`
 
 Repeats the entire sequence indefinitely.

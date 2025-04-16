@@ -1,3 +1,8 @@
+---
+title: then
+layout: home
+---
+
 ## `Then(...)`
 
 Adds a new step to the sequence. Effectively the same as `First(...)`.

@@ -1,3 +1,7 @@
+---
+title: randomly-do-one-of
+layout: home
+---
 
 ## `RandomlyDoOneOf(...)`
 

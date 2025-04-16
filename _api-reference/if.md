@@ -1,3 +1,8 @@
+---
+title: if
+layout: home
+---
+
 ## `If(...)`
 
 Begins a conditional.

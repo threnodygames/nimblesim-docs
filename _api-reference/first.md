@@ -1,3 +1,8 @@
+---
+title: first
+layout: home
+---
+
 ## `First(...)`
 
 Initializes the sequence with a first step.

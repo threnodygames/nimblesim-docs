@@ -1,3 +1,8 @@
+---
+title: repeat-times
+layout: home
+---
+
 ## `Repeat(int times)`
 
 Repeats the last step a fixed number of times.

@@ -1,3 +1,8 @@
+---
+title: repeat-for-seconds
+layout: home
+---
+
 ## `RepeatForSeconds(float seconds)`
 
 Repeats the last step for a fixed duration in seconds.

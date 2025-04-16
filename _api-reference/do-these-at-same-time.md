@@ -1,3 +1,8 @@
+---
+title: do-these-at-same-time
+layout: home
+---
+
 ## `DoTheseAtSameTime(...)`
 
 Executes multiple actions or sequences simultaneously.

@@ -1,3 +1,8 @@
+---
+title: maybe
+layout: home
+---
+
 ## `Maybe(...)`
 
 Adds a step that runs with a given chance (default=0.5).

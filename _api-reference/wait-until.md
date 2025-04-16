@@ -1,3 +1,8 @@
+---
+title: wait-until
+layout: home
+---
+
 ## `WaitUntil(...)`
 
 Repeats a no-op action until a condition becomes true.

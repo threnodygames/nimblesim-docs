@@ -1,3 +1,8 @@
+---
+title: wait
+layout: home
+---
+
 ## `Wait(float seconds)`
 
 Pauses the sequence for a number of seconds.
