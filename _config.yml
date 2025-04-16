@@ -10,12 +10,6 @@ url: https://just-the-docs.github.io
 
 logo: "/assets/images/icon.png"
 
-# search_enabled: true
-# search.heading_level: 2
-# search.previews: 3
-# search.preview_words_before: 5
-# search.preview_words_after: 10
-
 color_scheme: nimble
 
 collections:
