@@ -18,22 +18,25 @@ NimbleSim can be used in many ways, but in this specific example, I want to intr
 
 We want to simulate:
 
-- A **field** that grows flowers randomly
-- A **hive** that sends out bees to collect nectar
+- A **field** that grows flowers randomly and tells the hive to send a worker
+- A **hive** that sends out bees to collect nectar & uses nectar to grow its colony
 - **Bees** that forage and return
 - **Flowers** that handle being harvested
+- **Stats** that show the internal state of the hive
 
 All of this will be built using only 8 **NimbleSim sequences** & ~270 lines of code, with no coroutines, no hand-crafted if / elses, no state machines and barely any state tracking.
 
 Here's what the finished simulation looks like:
 
-<iframe width="560" height="315"
+<iframe width="800" height="450"
   src="https://www.youtube.com/embed/oGIw8FmthE0"
-  title="NimbleSim demo"
+  title="NimbleSim Bee Demo"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
+  allowfullscreen
+  style="border-radius: 12px; margin-top: 1rem;">
 </iframe>
+
 
 ---
 
