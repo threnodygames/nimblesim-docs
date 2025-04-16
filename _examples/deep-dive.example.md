@@ -1,5 +1,5 @@
 ---
-title: example
+title: beehive simulation
 layout: home
 ---
 
