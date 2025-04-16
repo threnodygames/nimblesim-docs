@@ -164,7 +164,7 @@ All described in language that reads like a story.
 
 To dive deeper into NimbleSim, consider checking out:
 
-- [the beehive simulation example](../_examples/deep-dive.example.html)
+- [the beehive simulation example]({{ site.baseurl }}/examples/beehive-sim)
 - [the tutorial]() (coming soon)
 - [the api docs]() (coming soon)
 
