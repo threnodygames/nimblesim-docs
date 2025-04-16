@@ -15,3 +15,10 @@ search_enabled: false
 
 color_scheme: dark
 
+just_the_docs:
+  collections:
+    concepts:
+      name: concepts
+    examples:
+      name: examples
+
