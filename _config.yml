@@ -20,6 +20,8 @@ collections:
 
 just_the_docs:
   collections:
+    getting-started:
+      name: getting started
     concepts:
       name: concepts
     examples:
