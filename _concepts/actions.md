@@ -1,5 +1,6 @@
 ---
 title: actions
+layout: home
 ---
 
 # Actions

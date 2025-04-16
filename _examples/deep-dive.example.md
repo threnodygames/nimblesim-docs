@@ -1,5 +1,6 @@
 ---
 title: example
+layout: home
 ---
 
 
