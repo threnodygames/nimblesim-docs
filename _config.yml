@@ -13,6 +13,8 @@ logo: "/assets/images/icon.png"
 color_scheme: nimble
 
 collections:
+  getting-started:
+    output: true
   concepts:
     output: true
   examples:
