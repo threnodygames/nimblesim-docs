@@ -14,7 +14,7 @@ It lets you define your game agents' behaviour using readable, declarative seque
 
 <div className="flex">
   <h2>
-      <a href="/what-it-solves">What is it trying to solve?</a>
+      <a href="/home/what-it-solves.html">What is it trying to solve?</a>
   </h2>
 </div>
 
