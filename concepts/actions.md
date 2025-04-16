@@ -1,7 +1,8 @@
 ---
 title: actions
 layout: home
-nav_order: 2
+nav_order: 1
+collection: concepts
 ---
 
 # Actions

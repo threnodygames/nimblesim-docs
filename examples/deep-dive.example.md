@@ -1,6 +1,6 @@
 ---
-title: Example
-nav_order: 2
+title: example
+nav_order: 3
 layout: home
 ---
 
