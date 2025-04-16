@@ -3,33 +3,206 @@ title: Home
 layout: home
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+# NimbleSim
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+**Nimble is currently in early-access.**
 
-More specifically, the created site:
+**NimbleSim** is a component-based behaviour orchestration framework for Unity that makes AI feel more like *storytelling* and less like plumbing.
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+It lets you define your game agents' behaviour using readable, declarative sequences built from atomic actions — just like building Legos. The result is expressive, modular, and infinitely composable behaviour code that stays easy to write, easy to understand, and easy to maintain.
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+---
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+## 🎯 Why NimbleSim?
 
-To get started with creating a site, simply:
+Ever find yourself writing code like this?
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+```csharp
+// Bee foraging behaviour
+ if (IsNighttime())
+    {
+      if (IsAtHive())
+      {
+        Sleep();
+      }
+      else
+      {
+        ReturnToHive();
+      }
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+      return;
+    }
 
-----
+    if (AlreadyHasNectar())
+    {
+      if (IsAtHive())
+      {
+        StoreNectar(flower)
+      }
+      else
+      {
+        FlyToHive();
+      }
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+      return;
+    }
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+    if (!IsNearFlower())
+    {
+      flower = FlyToNextFlower();
+      return;
+    }
+
+    if (flower.IsNotOccupied() && flower.HasNectar())
+    {
+      flower = FlyToNextFlower();
+      return;
+    }
+
+    Harvest(flower);
+```
+
+You try to make it readable by writing meaningful method names, implementing early returns so that you avoid deep if / else nesting and unnecessary checks.
+
+But this is 35 lines of code, not counting the whitespace. And despite your best efforts, it still has some overhead for understanding, it probably takes some work to add additional behaviours, and extracting parts of this behaviour to share with other actors either involves external methods that will need to be created and attached to this object, or some copy / pasting.
+
+*This is the same code in NimbleSim.*
+
+```csharp
+ Sequence tryHarvestFlower = Nimble.Sim()
+    .If(flower.IsNotOccupied, flower.HasNectar)
+        .Then(_ => Harvest(flower))
+        .Or(Action.Nothing())
+    .Done();
+
+Sequence forage = Nimble.Sim()
+    .If(IsNearFlower)
+        .Then(tryHarvestFlower)
+        .Or(_ => flower = FlyToNextFlower())
+    .Done();
+
+beeBehaviour = Nimble.Sim()
+    .If(AlreadyHasNectar)
+        .Then(ReturnToHive)
+        .Or(forage)
+    .RepeatUntil(IsNightTime)
+    .Then(ReturnToHive)
+    .Then(Sleep)
+.Done();
+```
+
+18 lines that read just like a story,
+
+Check out the [deep dive example](./DeepDiveExample.md) to see how NimbleSim can orchestrate more complex behaviours.
+
+NimbleSim is:
+
+- 🔍 **Readable** – behaviour scripts read like little stories.
+- 🧱 **Composable** – simple atomic actions can be glued together to create layered, reactive behaviours.
+- 🧠 **Declarative** – you say *what* the behaviour should do, not *how* to do it.
+- 🌀 **Interruptible & Reactive** – behaviours can respond to changes in the world mid-flow.
+- 🧰 **Plain C#** – no custom editor or node graph required.
+
+---
+
+## 🛠️ Core Concepts
+
+NimbleSim is built on two building blocks:
+
+### ✅ Actions
+
+Actions are classes which represent some behaviour or intent. While it is valid to build sequences using lambdas, actions provide a significantly higher level of control.
+
+For example, a Goto action may look like this:
+
+```csharp
+public class Goto : Action
+{
+  Vector3 destination;
+  float speed = 6.0f;
+
+  public Goto(Vector3 destination)
+  {
+    this.destination = destination;
+  }
+
+  public override void Update(GameObject actor)
+  {
+    actor.transform.position = Vector3.MoveTowards(
+      actor.transform.position,
+      destination,
+      speed * Time.deltaTime
+    );
+  }
+
+  protected override bool IsComplete(GameObject actor)
+  {
+    return Vector3.Distance(actor.transform.position, destination) < 0.5f;
+  }
+
+  public override Action Get()
+  {
+    return new Goto(destination);
+  }
+}
+```
+
+This action encapsulates its behaviour (move towards something) and its termination condition (within 0.5f units) into a contained block. And because actions don't need to know about the actor who will be executing it until after instantiation, it only needs to be written once and then can be passed to any sequence at all.
+
+Actions can also implement methods which provide precise control over their execution. For example:
+
+- IsComplete() - defines a clear termination condtion for the action
+- OnStart() - executed when an action becomes active in a sequence, immediately before the first update call
+- OnDone() - executed immediately after the action's final update call, right before it becomes inactive in a sequence
+
+But these are optional.
+
+[Read more about actions](./actions.md)
+
+
+### 🧱 Sequences
+
+Sequences are a series of steps which are run in some order.
+
+```csharp
+Nimble.Sim()
+    .First(GoToStore())
+    .If(StoreHasMilk())
+      .Then(BuyMilk())
+      .Or(KnockOverTheShelf())
+    .Done()
+```
+
+Sequences support composing:
+
+- lambas
+- actions
+- other sequences
+
+This enables you to create complex & recursive behaviours from small, dedidcated & reusable units.
+
+<!-- [Read more about sequences](./sequences.md) -->
+
+## Getting Start & Support
+
+💡 Ideal Use Cases
+
+- AI for cozy sims & emergent gameplay
+- NPC behaviour in systemic worlds
+- Game jams & prototyping
+- Anywhere behaviour readability matters
+
+🧰 Getting Started
+
+- Add NimbleSim/ to your project (Assets/NimbleSim/)
+- Check out the sample scene in Assets/Demo/Scenes/
+<!-- - Check out the [tutorial](./tutorial.md) -->
+- Create your own Sequences using Nimble.Sim() and plug them into your MonoBehaviours
+
+💬 Support & Feedback
+
+Built by Threnody Games.
+
+Pull requests, suggestions, and questions welcome.
+
+threnodygames@gmail.com
