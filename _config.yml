@@ -19,6 +19,8 @@ collections:
     output: true
   examples:
     output: true
+  api-reference:
+      name: true
 
 just_the_docs:
   collections:
@@ -28,4 +30,6 @@ just_the_docs:
       name: concepts
     examples:
       name: examples
+    api-reference:
+      name: api-reference
 
