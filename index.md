@@ -12,13 +12,7 @@ nav_order: 0
 
 It lets you define your game agents' behaviour using readable, declarative sequences built from atomic actions — just like building Legos. The result is expressive, modular, and infinitely composable behaviour code that stays easy to write, easy to understand, and easy to maintain.
 
-<!-- <div className="flex">
-  <h2>
-      <a href="/home/what-it-solves.html">What is it trying to solve?</a>
-  </h2>
-</div> -->
-
-[What is it trying to solve?](./home/what-it-solves.html){: .btn .btn-purple .mr-2 }
+<!-- [What is it trying to solve?](./home/what-it-solves.html){: .btn .btn-purple .mr-2 } -->
 
 ---
 
