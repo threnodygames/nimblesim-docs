@@ -12,7 +12,11 @@ nav_order: 0
 
 It lets you define your game agents' behaviour using readable, declarative sequences built from atomic actions — just like building Legos. The result is expressive, modular, and infinitely composable behaviour code that stays easy to write, easy to understand, and easy to maintain.
 
-[Why NimbleSim?](./home/why-nimblesim.md)
+<div className="flex">
+  <h2>
+      <a href="/what-it-solves">What is it trying to solve?</a>
+  </h2>
+</div>
 
 ---
 
