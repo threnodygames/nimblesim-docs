@@ -15,6 +15,12 @@ search_enabled: false
 
 color_scheme: dark
 
+collections:
+  concepts:
+    output: true
+  examples:
+    output: true
+
 just_the_docs:
   collections:
     concepts:

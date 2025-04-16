@@ -1,5 +1,7 @@
 ---
 title: actions
+parent: concepts
+nav_order: 0
 ---
 
 # Actions
