@@ -14,8 +14,3 @@ logo: "/assets/images/icon.png"
 search_enabled: false
 
 color_scheme: dark
-
-just_the_docs:
-  collections:
-    api:
-      name: api

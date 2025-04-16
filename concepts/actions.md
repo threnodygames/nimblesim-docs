@@ -1,6 +1,6 @@
 ---
 title: actions
-parent: api
+parent: concepts
 ---
 
 # Actions
