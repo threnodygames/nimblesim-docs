@@ -25,7 +25,15 @@ We want to simulate:
 
 All of this will be built using only 8 **NimbleSim sequences** & ~270 lines of code, with no coroutines, no hand-crafted if / elses, no state machines and barely any state tracking.
 
-You can watch a short video of the finished simulation [here](https://youtu.be/oGIw8FmthE0?si=5QitdVDW8_PPZrNW)
+Here's what the finished simulation looks like:
+
+<iframe width="560" height="315"
+  src="https://www.youtube.com/embed/oGIw8FmthE0"
+  title="NimbleSim demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
 
 ---
 
