@@ -1,6 +1,6 @@
 ---
-title: Actions
-layout: home
+title: actions
+parent: api
 ---
 
 # Actions
