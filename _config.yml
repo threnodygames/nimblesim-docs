@@ -11,7 +11,7 @@ url: https://just-the-docs.github.io
 logo: "/assets/images/icon.png"
 
 # Fix this later
-search_enabled: false
+search_enabled: true
 
 color_scheme: nimble
 
