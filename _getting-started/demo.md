@@ -28,6 +28,7 @@ In parallel, another sequence is being run on the camera which makes it follow t
 NimbleSim uses sequences & actions to orchestrate behaviours. For example, we can create a sequence to simulate an actor falling down and taking damage:
 
 ```csharp
+  // NimbleMovement.cs : line 33
   Sequence FalloverAndTakeDamage()
   {
       void FallOver(GameObject actor)
@@ -52,6 +53,7 @@ Nimble aims to read as close to plain-english as possible, so (hopefully) it's c
 Similarly, we can simulate randomly choosing an object to run to:
 
 ```csharp
+// NimbleMovement.cs : line 48
  Sequence RunToRandomObject()
 {
     return Nimble.Sim()
@@ -65,33 +67,24 @@ Similarly, we can simulate randomly choosing an object to run to:
 }
 ```
 
-Sequences are also composable, meaning we can take the above and plug them both into a parent sequence:
+Sequences are also composable, meaning we can take the previous sequences and compose them into a larger sequence. Then we can add guards, such as `RepeatPreviousUntil` to control execution.
 
 ```csharp
-return Nimble.Sim()
-  .First(RunToRandomObject())
-  .Maybe(FalloverAndTakeDamage(), 0.4f)
-  .Then(() => actor.transform.rotation = Quaternion.identity)
-  .Done();
-```
-
-Methods such as `Maybe`, `RandomlyDoOneOf`, `Wait` are provided as part of NimbleSim. So you just script the behaviour you want and then run it.
-
-Sequences are also composable infinitely, meaning we can take the previous sequence, which composes the first two, and compose it into a larger sequence with a circuit breaker.
-
-```csharp
+// NimbleMovement.cs : line 63
 all = Nimble.Sim()
-    .First(RunAround())
-    .RepeatUntil(() => health <= 0) // Sequences are interruptible.
+    .First(RunToRandomObject())
+    .Maybe(FalloverAndTakeDamage(), 0.4f)
+    .RepeatPreviousUntil(() => health <= 0)
     .Then(actor => Destroy(actor))
 .Done();
 ```
 
-Now, the actor will run around until its health reaches or drops below zero, at which point the `Then` will finally execute, destroying the actor, and the sequence will exit.
+Now, the actor will run around and *maybe* fall over repeatedly. When it's health hits zero, the circuit breaker will kick in, and progress to the `Then` step, destroying the actor.
 
 Sequences can run on any actor, regardless of which class they were created in. For example, we can create a sequence to have the camera follow our capsule:
 
 ```csharp
+// NimbleMovement.cs : line 70
 cameraFollow = Nimble.Sim()
     // CameraFollow is an action. More on these in a second.
     .First(new CameraFollow(this.gameObject))
@@ -101,6 +94,7 @@ cameraFollow = Nimble.Sim()
 Now, we can run both the movement sequence and the camera sequence, in parallel, on our capsule:
 
 ```csharp
+// NimbleMovement.cs : line 75
 void Update()
 {
     all.Update(gameObject);
@@ -116,6 +110,7 @@ By passing in a game object to update, you control which actor the sequence will
 Actions are units of behaviour. While you can absolutely build sequences out of lambdas alone, actions give you more fine-grained control over execution. The movement of the agent is orchestrated by the following action:
 
 ```csharp
+  // MoveTo.cs
   public class MoveTo : Action
   {
     Transform destination;
@@ -150,7 +145,7 @@ Wrapping this behaviour in an action and passing it into a sequence means Nimble
 
 ## Summary
 
-With only these 5 sequences and 2 actions, it was possible to simulate:
+With only these 4 sequences, 2 actions & ~140 lines (including whitespace, using statements and class setup), it was possible to simulate:
 
 - Random choice
 - Circuit breakers
@@ -166,6 +161,6 @@ To dive deeper into NimbleSim, consider checking out:
 
 - [the beehive simulation example]({{ site.baseurl }}/examples/beehive-sim)
 - [the tutorial]() (coming soon)
-- [the api docs]() (coming soon)
+- [the api reference]({{ site.baseurl }}/api-reference/api)
 
 

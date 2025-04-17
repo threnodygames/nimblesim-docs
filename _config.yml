@@ -20,7 +20,7 @@ collections:
   examples:
     output: true
   api-reference:
-      name: true
+    output: true
 
 just_the_docs:
   collections:
