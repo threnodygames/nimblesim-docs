@@ -141,4 +141,4 @@ Now, if you switch back to your editor, make sure the `Villager` script is attac
 
 Head here to see the [full code](https://github.com/threnodygames/nimblesim-village/tree/main/villager-setup) for these two files.
 
-Next: [Eating and drinking]({{ site.baseurl }}/tutorials/village-sim/eating-and-drinking.md)
+Next: [Eating and drinking]({{ site.baseurl }}/tutorials/village-sim/eating-and-drinking)
