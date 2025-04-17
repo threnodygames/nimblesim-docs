@@ -2,6 +2,7 @@
 title: done
 layout: home
 nav_order: 2
+parent: basic-steps
 ---
 
 ## `Sequence Done(int times = 0)`
