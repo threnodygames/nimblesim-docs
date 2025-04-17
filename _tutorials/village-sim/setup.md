@@ -82,4 +82,4 @@ To test this, go back to the editor and drag the `Village.cs` script onto the `V
 
 If you see `Working` printed 4 times, with a 2 second delay in between, then NimbleSim is all good to go and we can get started.
 
-[Villager setup]({{ site.baseurl }}/tutorials/village-sim/villager)
+[Villager setup]({{ site.baseurl }}/tutorials/village-sim/villager-metabolism)

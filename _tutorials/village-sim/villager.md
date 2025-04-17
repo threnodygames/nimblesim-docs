@@ -1,11 +1,11 @@
 ---
-title: villager
+title: villager-metabolism
 parent: village-sim
 nav_order: 1
 layout: home
 ---
 
-# Villager Setup
+# Villager Metabolism
 
 ## Prefab and Script Setup
 
@@ -15,6 +15,18 @@ layout: home
 ## Villager Metabolism
 
 Villagers will experience hunger and thirst, and if either of these are neglected for too long, they will die.
+
+Here's a video of what you'll have by the end of this step:
+
+<iframe width="800" height="450"
+  src="https://www.youtube.com/embed/faf943fZFMM"
+  title="NimbleSim Bee Demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="border-radius: 12px; margin-top: 1rem;">
+</iframe>
+
 
 ### Story
 
@@ -119,16 +131,5 @@ void Update()
 This is all you need to activate the metabolism. If we later wanted to add other creatures with metabolisms, we would only need to add those three lines. Arguments could be added to the `Metabolism` class to customise starting values & threshold values.
 
 Now, if you switch back to your editor, make sure the `Villager` script is attached to the capsule & hit play, you should see the hunger and thirst ticking up.
-
-Here's what mine looks like (with the wait time reduced to 0.5f for testing purposes):
-
-<iframe width="800" height="450"
-  src="https://www.youtube.com/embed/faf943fZFMM"
-  title="NimbleSim Bee Demo"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-  style="border-radius: 12px; margin-top: 1rem;">
-</iframe>
 
 Head here to see the [full code](https://github.com/threnodygames/nimblesim-village/tree/main/villager-setup) for these two files.
