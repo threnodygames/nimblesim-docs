@@ -1,6 +1,11 @@
 @import "./color_schemes/dark";
 
-$link-color: #00b1b1;
+$teal-000: #00b1b1;
+$teal-100: #01a4a4;
+$teal-200: #019090;
+$teal-300: #008585;
+
+$link-color: teal;
 
 .nav-list-item {
   color: $link-color;
