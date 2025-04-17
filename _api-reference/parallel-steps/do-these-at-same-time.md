@@ -1,6 +1,7 @@
 ---
 title: do-these-at-same-time
 layout: home
+parent: parallel-steps
 ---
 
 ## `DoTheseAtSameTime(...)`

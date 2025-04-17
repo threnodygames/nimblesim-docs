@@ -1,6 +1,7 @@
 ---
 title: maybe
 layout: home
+parent: random-chance-steps
 ---
 
 ## `Maybe(...)`

@@ -1,6 +1,7 @@
 ---
 title: repeat-forever
 layout: home
+parent: repeat-steps
 ---
 
 ## `RepeatForever()`

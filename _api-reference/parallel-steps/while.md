@@ -1,6 +1,7 @@
 ---
 title: while
 layout: home
+parent: parallel-steps
 ---
 
 ## `While()`

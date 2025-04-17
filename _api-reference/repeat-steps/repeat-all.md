@@ -1,6 +1,7 @@
 ---
 title: repeat-all
 layout: home
+parent: repeat-steps
 ---
 
 ## `Sequence RepeatAll(int times)`

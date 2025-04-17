@@ -1,6 +1,7 @@
 ---
 title: debug
 layout: home
+parent: debug-steps
 ---
 
 ## `Debug(string msg)`

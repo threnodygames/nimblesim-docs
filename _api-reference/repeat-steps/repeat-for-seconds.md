@@ -1,6 +1,7 @@
 ---
 title: repeat-for-seconds
 layout: home
+parent: repeat-steps
 ---
 
 ## `RepeatForSeconds(float seconds)`

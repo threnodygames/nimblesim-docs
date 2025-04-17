@@ -1,6 +1,7 @@
 ---
 title: repeat-times
 layout: home
+parent: repeat-steps
 ---
 
 ## `Repeat(int times)`
