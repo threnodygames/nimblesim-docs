@@ -21,7 +21,7 @@ Here's a demo of what this will look like:
 </iframe>
 
 {: .note }
-I've added UI elements and increased the metabolic rate and threshold only for the purpose of the video.  
+For the purposes of the demo, I've added UI elements and increased both the rate at which the stats increase & the thresholds at which the villager will seek food.
 
 ## What we could do
 
