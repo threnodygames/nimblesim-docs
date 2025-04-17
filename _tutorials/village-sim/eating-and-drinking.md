@@ -7,7 +7,21 @@
 
 # Eating and Drinking
 
-Currently our villagers have no way to address their hunger or thirst. We need to develop a system whereby they can react to these stats getting too high, go to the food hall, get what they need, and then update their metabolism. Just to make it harder, let's also say they have to wait at the food hall for 2 seconds before updating anything to simulate a meal. On top of this, we need to support the scenario where the food hall has no stock. For now, if this happens, we'll just make the villager wait until there is stock, BUT they shouldn't ask again until that point.
+Currently our villagers have no way to address their hunger or thirst. We need to develop a system whereby they can react to these stats getting too high, go to the food hall, get what they need, and then update their metabolism. Just to make it harder, let's also say they have to wait at the food hall for 2 seconds before updating anything to simulate a meal. On top of this, we need to support the scenario where the food hall has no stock. In this scenario, the villager should "suppress" their hunger and thirst for 5 seconds before trying again.
+
+Here's a demo of what this will look like:
+
+<iframe width="800" height="450"
+  src="https://www.youtube.com/embed/-E52QkLZK-M"
+  title="NimbleSim Bee Demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="border-radius: 12px; margin-top: 1rem;">
+</iframe>
+
+{: .note }
+I've added UI elements and increased the metabolic rate and threshold only for the purpose of the video.  
 
 ## What we could do
 
@@ -354,6 +368,17 @@ If you want to see this working right now, you should:
 ```
 
 You should be able to see that everything is working as expected. 
+
+<iframe width="800" height="450"
+  src="https://www.youtube.com/embed/a1LatW_kamc"
+  title="NimbleSim Bee Demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="border-radius: 12px; margin-top: 1rem;">
+</iframe>
+
+https://youtu.be/
 
 ## Movement logic
 
