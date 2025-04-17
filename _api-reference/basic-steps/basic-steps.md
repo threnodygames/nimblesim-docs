@@ -1,6 +1,6 @@
 ---
 title: basic-steps
-parent: api
+parent: api-reference
 nav_order: 0
 ---
 

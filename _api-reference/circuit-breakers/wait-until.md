@@ -1,6 +1,7 @@
 ---
 title: wait-until
 layout: home
+parent: circuit-breakers
 ---
 
 ## `WaitUntil(...)`

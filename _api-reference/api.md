@@ -1,5 +1,5 @@
 ---
-title: api reference
+title: api-reference
 layout: home
 ---
 
