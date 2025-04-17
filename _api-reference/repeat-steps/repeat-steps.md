@@ -1,4 +1,3 @@
 ---
 title: repeat-steps
-parent: api-reference
 ---

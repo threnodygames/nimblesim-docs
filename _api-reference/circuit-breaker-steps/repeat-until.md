@@ -1,7 +1,7 @@
 ---
 title: repeat-until
 layout: home
-parent: circuit-breakers
+parent: circuit-breaker-steps
 ---
 
 ## `RepeatUntil(...)`

@@ -1,6 +1,7 @@
 ---
 title: wait
 layout: home
+parent: timing-steps
 ---
 
 ## `Wait(float seconds)`
