@@ -97,8 +97,9 @@ return Nimble.Sim()
 ```
 
 {: .note }
-Note: We use Then with a lambda expression for the hunger and thirst logs because plain strings are evaluated immediately when the sequence is built.
-Using a Func<string> (like () => $"Hunger: {hunger}") ensures the log message is re-evaluated each time the step runs, reflecting the updated values.
+We use `Then` with a lambda expression for the hunger and thirst logs because plain strings are evaluated immediately when the sequence is built. 
+
+Using a `Func<string> (like () => $"Hunger: {hunger}")` ensures the log message is re-evaluated each time the step runs, reflecting the updated values.
 
 
 Now, go back to your villager class and add the following in the class body:
