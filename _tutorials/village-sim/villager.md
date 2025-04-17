@@ -130,3 +130,5 @@ Here's what mine looks like (with the wait time reduced to 0.5f for testing purp
   allowfullscreen
   style="border-radius: 12px; margin-top: 1rem;">
 </iframe>
+
+Head here to see the [full code](https://github.com/threnodygames/nimblesim-village/tree/main/villager-setup) for these two files.
