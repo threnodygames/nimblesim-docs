@@ -7,7 +7,7 @@ parent: basic-steps
 
 ## `First(...)`
 
----
+-------
 
 Initializes the sequence with a first step.
 
