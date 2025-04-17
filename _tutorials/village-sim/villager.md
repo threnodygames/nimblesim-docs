@@ -53,13 +53,14 @@ This is all we need for now.
 
 ## Implementation
 
-Because Sequences don't need to be attached to any GameObject until they're invoked, we can create a `Metabolism` class that encapsulates this logic. That means any villagers don't need to know about any of this behaviour; the just grab the sequence and execute it.
+Sequences in NimbleSim are completely independent of Unity objects — they’re just behavior blueprints. That means we can write a Metabolism class that builds a sequence and hand it off to any villager when they need it.
 
 This approach also opens up the possibility of adding other creatures with metabolisms later, like animals.
 
 For now though, we'll only be supporting villagers, so let's create a `Metabolism.cs` class in the `Villager/` folder and add our hunger and thirst properties.
 
-Note: This does not have to be a `MonoBehaviour`.
+{: .note}
+This class doesn't need to inherit from MonoBehaviour, since it doesn’t need to live in the scene or hook into Unity’s lifecycle.
 
 ```csharp
 public class Metabolism
@@ -81,7 +82,7 @@ Also copy over the methods we'll use in our sequence:
 Now add a method which returns the sequence:
 
 ```csharp
-   public Sequnence Get()
+   public Sequence Get()
   {
     return Nimble.Sim()
       .Wait(3)
@@ -128,7 +129,11 @@ void Update()
 }
 ```
 
-This is all you need to activate the metabolism. If we later wanted to add other creatures with metabolisms, we would only need to add those three lines. Arguments could be added to the `Metabolism` class to customise starting values & threshold values.
+This is all you need to activate the metabolism. If we later wanted to add other creatures with metabolisms, we would only need to add those three lines. Arguments could also be added to the `Metabolism` class to customise starting values & threshold values, e.g.:
+
+```csharp
+public Metabolism(int startingHunger, int startingThirst, int maxThreshold)
+```
 
 Now, if you switch back to your editor, make sure the `Villager` script is attached to the capsule & hit play, you should see the hunger and thirst ticking up.
 
