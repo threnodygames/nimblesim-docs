@@ -116,6 +116,17 @@ void Update()
 }
 ```
 
+This is all you need to activate the metabolism. If we later wanted to add other creatures with metabolisms, we would only need to add those three lines. Arguments could be added to the `Metabolism` class to customise starting values & threshold values.
 
+Now, if you switch back to your editor, make sure the `Villager` script is attached to the capsule & hit play, you should see the hunger and thirst ticking up.
 
-This is all you need to activate the metabolism. If we later wanted to add other creatures with metabolisms, we would only need to add those three lines. We could also add 
+Here's what mine looks like (with the wait time reduced to 0.5f for testing purposes):
+
+<iframe width="800" height="450"
+  src="https://www.youtube.com/embed/faf943fZFMM"
+  title="NimbleSim Bee Demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="border-radius: 12px; margin-top: 1rem;">
+</iframe>
