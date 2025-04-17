@@ -6,6 +6,8 @@ parent: circuit-breaker-steps
 
 ## `WaitUntil(...)`
 
+---
+
 Repeats a no-op action until a condition becomes true.
 
 Accepts:

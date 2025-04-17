@@ -6,6 +6,8 @@ parent: random-chance-steps
 
 ## `Maybe(...)`
 
+---
+
 Adds a step that runs with a given chance (default=0.5).
 
 Supports:

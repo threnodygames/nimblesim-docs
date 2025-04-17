@@ -6,6 +6,8 @@ parent: parallel-steps
 
 ## `DoTheseAtSameTime(...)`
 
+---
+
 Executes multiple actions or sequences simultaneously.
 
 Supports

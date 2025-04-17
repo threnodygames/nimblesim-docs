@@ -6,6 +6,8 @@ parent: repeat-steps
 
 ## `Sequence RepeatAll(int times)`
 
+---
+
 Repeats the entire sequence a fixed number of times.
 
 Example:

@@ -6,6 +6,8 @@ parent: timing-steps
 
 ## `Wait(float seconds)`
 
+---
+
 Pauses the sequence for a number of seconds.
 
 Example:

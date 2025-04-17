@@ -6,6 +6,8 @@ parent: repeat-steps
 
 ## `RepeatForSeconds(float seconds)`
 
+---
+
 Repeats the last step for a fixed duration in seconds.
 
 Example:

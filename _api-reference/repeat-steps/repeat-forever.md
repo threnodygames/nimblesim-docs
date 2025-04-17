@@ -6,6 +6,8 @@ parent: repeat-steps
 
 ## `RepeatForever()`
 
+---
+
 Repeats the last step indefinitely.
 
 Examples:

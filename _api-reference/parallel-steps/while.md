@@ -6,6 +6,8 @@ parent: parallel-steps
 
 ## `While()`
 
+---
+
 Begins a `While` block, allowing behavior to run while another sequence is active. Must be followed by `.Do(...)`.
 
 Supports:

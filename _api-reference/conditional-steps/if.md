@@ -6,6 +6,8 @@ parent: conditional-steps
 
 ## `If(...)`
 
+---
+
 Begins a conditional.
 
 Supports:

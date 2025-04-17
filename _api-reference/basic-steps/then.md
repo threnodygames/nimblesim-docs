@@ -7,6 +7,8 @@ parent: basic-steps
 
 ## `Then(...)`
 
+---
+
 Adds a new step to the sequence. Effectively the same as `First(...)`.
 
 Supports:

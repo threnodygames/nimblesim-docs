@@ -6,6 +6,8 @@ parent: circuit-breaker-steps
 
 ## `RepeatUntil(...)`
 
+---
+
 Repeats the last step until a condition becomes true.
 
 Supports:
