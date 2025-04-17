@@ -15,6 +15,8 @@ color_scheme: nimble
 collections:
   getting-started:
     output: true
+  tutorials:
+    output: true
   concepts:
     output: true
   examples:
@@ -26,6 +28,8 @@ just_the_docs:
   collections:
     getting-started:
       name: getting started
+    tutorials:
+      name: tutorials
     concepts:
       name: concepts
     examples:
