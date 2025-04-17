@@ -116,16 +116,18 @@ We use `Then` with a lambda expression for the hunger and thirst logs because pl
 Now, go back to your villager class and add the following in the class body:
 
 ```csharp
-Sequence metabolism;
+Metabolism metabolism;
+Sequence bodyClock;
 
 void Start()
 {
-    metabolism = new Metabolism().Get();
+    metabolism = new Metabolism();
+    bodyClock = metabolism.Get();
 }
 
 void Update()
 {
-    metabolism.Update(gameObject);
+    bodyClock.Update(gameObject);
 }
 ```
 
@@ -138,3 +140,5 @@ public Metabolism(int startingHunger, int startingThirst, int maxThreshold)
 Now, if you switch back to your editor, make sure the `Villager` script is attached to the capsule & hit play, you should see the hunger and thirst ticking up.
 
 Head here to see the [full code](https://github.com/threnodygames/nimblesim-village/tree/main/villager-setup) for these two files.
+
+Next: [Eating and drinking]({{ site.baseurl }}/tutorials/village-sim/eating-and-drinking.md)
