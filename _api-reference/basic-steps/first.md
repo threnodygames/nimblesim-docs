@@ -7,6 +7,8 @@ parent: basic-steps
 
 ## `First(...)`
 
+---
+
 Initializes the sequence with a first step.
 
 Supports:
@@ -21,16 +23,19 @@ Examples
 ```csharp
   Nimble.Sim()
     .First(() => Debug.Log("First"))
+  .Done();
 ```
 
 ```csharp
   Nimble.Sim()
     .First((GameObject actor) => Debug.Log(actor.tag))
+  .Done();
 ```
 
 ```csharp
    Nimble.Sim()
     .First(new ActionDebug())
+  .Done();
 ```
 
 ```csharp
@@ -38,4 +43,5 @@ Examples
     .First(
       Nimble.Sim().First(() => Debug.Log("Hello").Done())
     )
+  .Done();
 ```

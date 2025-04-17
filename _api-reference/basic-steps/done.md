@@ -8,3 +8,11 @@ parent: basic-steps
 ## `Sequence Done(int times = 0)`
 
 Finalizes the sequence and returns it.
+
+Example:
+
+```csharp
+  Nimble.Sim()
+    .Debug("I do nothing")
+    .Done();
+```

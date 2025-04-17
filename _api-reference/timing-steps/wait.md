@@ -15,4 +15,5 @@ Example:
     .First(() => Debug.Log("Start"))
     .Wait(3)
     .Then(() => Debug.Log("Three seconds later..."))
+  .Done();
 ```

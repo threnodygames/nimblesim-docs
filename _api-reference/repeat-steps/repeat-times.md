@@ -14,4 +14,5 @@ Example:
   Nimble.Sim()
     .First(() => Debug.Log("Is there an echo in here?"))
     .Repeat(10)
+  .Done();
 ```

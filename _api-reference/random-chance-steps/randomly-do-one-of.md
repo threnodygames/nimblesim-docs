@@ -25,6 +25,7 @@ Examples:
       () => Debug.Log("1"),
       () => Debug.Log("2")
     )
+  .Done();
 ```
 
 ```csharp
@@ -33,6 +34,7 @@ Examples:
       (GameObject actor) => Debug.Log($"1: {actor.tag}"),
       (GameObject actor) => Debug.Log($"2: {actor.tag}")
     )
+  .Done();
 ```
 
 ```csharp
@@ -41,6 +43,7 @@ Examples:
       new ActionDebug("1"),
       new ActionDebug("2")
     )
+  .Done();
 ```
 
 Use weighted form for probabilistic behavior:
@@ -51,4 +54,5 @@ Use weighted form for probabilistic behavior:
       (new ActionDebug("1"), 0.3),
       (new ActionDebug("2"), 0.7)
     )
+  .Done();
 ```

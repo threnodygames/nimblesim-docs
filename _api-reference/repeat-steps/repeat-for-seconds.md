@@ -14,4 +14,5 @@ Example:
   Nimble.Sim()
     .First(() => Debug.Log("Waaaa"))
     .RepeatForSeconds(20391248)
+  .Done();
 ```

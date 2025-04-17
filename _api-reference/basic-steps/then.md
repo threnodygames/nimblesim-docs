@@ -22,26 +22,30 @@ Examples
   Nimble.Sim()
     .First(() => Debug.Log("First"))
     .Then(() => Debug.Log("Then"))
+    .Done();
 ```
 
 ```csharp
   Nimble.Sim()
     .First((GameObject actor) => Debug.Log(actor.tag))
     .Then((GameObject actor) => Debug.Log(actor.tag))
+    .Done();
 ```
 
 ```csharp
    Nimble.Sim()
     .First(new ActionDebug())
     .Then(new ActionDebug())
+    .Done();
 ```
 
 ```csharp
    Nimble.Sim()
     .First(
-      Nimble.Sim().First(() => Debug.Log("Hello").Done())
+      Nimble.Sim().First(() => Debug.Log("Hello").Done()
     )
     .Then(
       Nimble.Sim().First(() => Debug.Log("Hello").Done())
     )
+    .Done();
 ```

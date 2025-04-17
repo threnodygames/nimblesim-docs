@@ -19,6 +19,7 @@ Examples:
     .First(Sleep())
     .WaitUntil(() => energy >= 10)
     .Then(WakeUp())
+    .Done();
 ```
 
 ```csharp
@@ -26,6 +27,7 @@ Examples:
     .First(Sleep())
     .WaitUntil((GameObject actor) => actor.GetComponent<Energy>().value >= 10)
     .Then(WakeUp())
+    .Done();
 ```
 
 Used for polling or gating further actions.

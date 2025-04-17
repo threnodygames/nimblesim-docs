@@ -20,6 +20,7 @@ Supports
       new Action.Debug("2"),
       Nimble.Sim().First(() => Debug.Log("3")).Done()
     )
+  .Done();
 ```
 
 Useful for combining actions like moving and rotating at once.

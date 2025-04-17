@@ -19,10 +19,12 @@ Examples:
   Nimble.Sim()
     .First(() => Debug.Log("Write docs"))
     .RepeatUntil(Dead())
+    .Done();
 ```
 
 ```csharp
   Nimble.Sim()
     .First((GameObject actor) => actor.GetComponent<Fingers>().Write())
     .RepeatUntil(Crying())
+    .Done();
 ```

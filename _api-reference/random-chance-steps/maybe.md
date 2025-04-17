@@ -19,31 +19,39 @@ Examples
 ```csharp
   Nimble.Sim()
     .Maybe(() => Debug.Log("First"))
+  .Done();
 
   Nimble.Sim()
     .Maybe(() => Debug.Log("First"), 0.3)
+  .Done();
 ```
 
 ```csharp
   Nimble.Sim()
     .Maybe((GameObject actor) => Debug.Log(actor.tag))
+  .Done();
 
   Nimble.Sim()
     .Maybe((GameObject actor) => Debug.Log(actor.tag), 0.3)
+  .Done();
 ```
 
 ```csharp
    Nimble.Sim()
     .Maybe(new ActionDebug())
+  .Done();
 
    Nimble.Sim()
     .Maybe(new ActionDebug(), 0.3)
+  .Done();
 ```
 
 ```csharp
    Nimble.Sim()
     .Maybe(Nimble.Sim().First(() => Debug.Log("1")).Done())
+  .Done();
 
-    Nimble.Sim()
+  Nimble.Sim()
     .Maybe(Nimble.Sim().First(() => Debug.Log("1")).Done(), 0.3)
+  .Done();
 ```

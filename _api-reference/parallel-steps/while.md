@@ -19,12 +19,14 @@ Examples:
   Nimble.Sim()
     .While(new ActionRunAway())
       .Do(() => Debug.Log("AAAAAAAAA"))
+    .Done();
 ```
 
 ```csharp
   Nimble.Sim()
     .While(Nimble.Sim().First(new ActionRunAway()).Done())
       .Do(() => Debug.Log("AAAAAAAAA"))
+    .Done();
 ```
 
 `Do()` supports the same arguments as `.Then()`

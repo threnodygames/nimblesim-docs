@@ -15,4 +15,5 @@ Examples:
     .First(PunchSelf())
     .Then(() => Debug.Log("Ow"))
     .RepeatForever()
+  .Done();
 ```

@@ -22,6 +22,7 @@ Examples
     .If(() => health > 10)
       .Then(() => Debug.Log("1"))
       .Or(() => Debug.Log("2"))
+    .Done();
 ```
 
 ```csharp
@@ -29,6 +30,7 @@ Examples
     .If((GameObject actor) => actor.GetComponent<Health>().value > 10)
       .Then(() => Debug.Log("1"))
       .Or(() => Debug.Log("2"))
+    .Done();
 ```
 
 ```csharp
@@ -36,6 +38,7 @@ Examples
     .If(new CheckHealth())
       .Then(() => Debug.Log("1"))
       .Or(() => Debug.Log("2"))
+    .Done();
 ```
 
 ```csharp
@@ -43,6 +46,7 @@ Examples
     .If(() => health >= 10, () => health <= 20)
       .Then(() => Debug.Log("1"))
       .Or(() => Debug.Log("2"))
+    .Done();
 ```
 
 ```csharp
@@ -50,6 +54,7 @@ Examples
     .If((GameObject actor) => health >= 10, (GameObject actor) => health <= 20)
       .Then(() => Debug.Log("1"))
       .Or(() => Debug.Log("2"))
+    .Done();
 ```
 
 The result is a conditional branch builder supporting `.Then(...)` and then `.Or(...)`, both of which support the same arguments as `.Then(...)`.
