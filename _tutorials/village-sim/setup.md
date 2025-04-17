@@ -18,7 +18,7 @@ layout: home
 
 1. Create one final folder in `Village/` called `Scripts/` and add a new MonoBehaviour script called `Village`
 
-![]({{ site.baseurl }}/assets/images/villager-loop.png)
+![]({{ site.baseurl }}/assets/tutorials/village-sim/setup/add-village-script.png)
 
 2. Now we can check if NimbleSim is setup and working correctly.
 

@@ -37,3 +37,7 @@ just_the_docs:
     api-reference:
       name: api-reference
 
+callouts:
+  note:
+    title: Note
+    color: #00b1b1
