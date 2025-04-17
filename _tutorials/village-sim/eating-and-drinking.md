@@ -2,6 +2,7 @@
   title: eating-and-drinking
   nav_order: 2
   parent: village-sim
+  layout: home
 ---
 
 # Eating and Drinking
