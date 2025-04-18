@@ -7,7 +7,7 @@
 
 # Eating and Drinking
 
-Currently our villagers have no way to address their hunger or thirst. We need to develop a system whereby they can react to these stats getting too high, go to the food hall, get what they need, and then update their metabolism. Just to make it harder, let's also say they have to wait at the food hall for 2 seconds before updating anything to simulate a meal. On top of this, we need to support the scenario where the food hall has no stock. In this scenario, the villager should "suppress" their hunger and thirst for 5 seconds before trying again.
+Currently our villagers have no way to address their hunger or thirst. We need to develop a system whereby they can react to these stats getting too high, go to the food hall, get what they need, and then update their metabolism. We also need to support the scenario where the food hall has no stock, in which case the villager should "suppress" their hunger and thirst for 5 seconds before trying again.
 
 Here's a demo of what this will look like:
 
